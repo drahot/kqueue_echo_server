@@ -78,6 +78,7 @@ impl IOSelector {
                 _ => panic!("kevent error: {:?}", err),
             }
         }
+
         assert!(!wakers.contains_key(&fd));
         wakers.insert(fd, waker);
     }
